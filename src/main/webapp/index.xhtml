@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:body>
+    <h:panelGrid columns="2">
+        <h:graphicImage name="test.png" library="images"   
+height="50px" width="50px"></h:graphicImage>  
+        
+        <h:form>
+            <h3 style="margin-left: 2px">Survey</h3>
+            <div style="margin-top: 4px">
+                <h:outputLabel value="Name"></h:outputLabel>
+                <h:inputText id="txtwName" required="true" requiredMessage="Enter Name Please!" value="#{surveyBean.wName}"/>
+                <h:message style="color: red" for="txtwName"></h:message>
+            </div>
+            <div style="margin-top: 4px">
+                <h:outputLabel value="Phone"></h:outputLabel>
+                <h:inputText id="txtwPhone" required="true" requiredMessage="Enter Phone Please!" validatorMessage="Enter number please!" value="#{surveyBean.wPhone}">
+                <f:validateRegex pattern="[0-9]+"/>
+                </h:inputText>
+                <h:message style="color: red" for="txtwPhone"></h:message>
+            </div>
+                <h:outputLabel value="Gender"></h:outputLabel>
+                <p:selectOneRadio id="wGender" unselectable="false" value="#{surveyBean.wGender}">
+                    <f:selectItem itemLabel="Male" itemValue="Male" />
+                    <f:selectItem itemLabel="Famale" itemValue="Famale" />
+                </p:selectOneRadio>
+                <p:commandButton action="#{surveyBean.getResponse()}" value="Submit" icon="pi pi-check" />
+                <h:outputText escape="false" value="#{surveyBean.response}"></h:outputText>
+        </h:form>
+    </h:panelGrid>
+</h:body>
+</html>
