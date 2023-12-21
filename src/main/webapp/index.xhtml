@@ -15,7 +15,9 @@ height="50px" width="50px"></h:graphicImage>
             <h3 style="margin-left: 2px">Survey</h3>
             <div style="margin-top: 4px">
                 <h:outputLabel value="Name"></h:outputLabel>
-                <h:inputText id="txtwName" required="true" requiredMessage="Enter Name Please!" value="#{surveyBean.wName}"/>
+                <h:inputText id="txtwName" value="#{surveyBean.wName}">
+                    <f:validator validatorId="LanguageValidator"/>
+                </h:inputText>
                 <h:message style="color: red" for="txtwName"></h:message>
             </div>
             <div style="margin-top: 4px">
