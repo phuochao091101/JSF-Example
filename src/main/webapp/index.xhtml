@@ -6,7 +6,14 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>HomePage</title>
+<!--        <f:loadBundle var="msg" basename="com.resourcebundle.message"/>-->
+    </h:head>
 <h:body>
+    <h:outputFormat value="#{msg['survey.hello']}">
+        <f:param value="Hao"></f:param>
+    </h:outputFormat>
     <h:panelGrid columns="2">
         <h:graphicImage name="test.png" library="images"   
 height="50px" width="50px"></h:graphicImage>  

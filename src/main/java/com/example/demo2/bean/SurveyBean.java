@@ -27,6 +27,10 @@ public class SurveyBean {
     public SurveyBean() {
     }
     
+    public String goIndex(){
+        return "index?face-redirect=true";
+    }
+    
     public String getResponse(){
         StringBuilder builder=new StringBuilder();
         builder.append("Print <br>");
